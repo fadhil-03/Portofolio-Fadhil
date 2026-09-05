@@ -246,7 +246,14 @@ h2{
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
   clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
+}
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(0.9) contrast(1.05);
 }
 .about-text p{
   margin:0 0 14px;
@@ -473,11 +480,16 @@ footer p{
   margin:0;
 }
 
+html,body{overflow-x:hidden;}
+
 /* ---------- responsive ---------- */
 @media (max-width:760px){
   .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:640px){
+  .wrap{padding:0 28px;}
+  .hero{padding-top:56px;}
+  h1{font-size:clamp(28px,8vw,40px);}
   .nav-links{
     position:absolute;
     top:100%;
